@@ -1,0 +1,26 @@
+{
+  "name": "ascii-game-engine",
+  "version": "0.0.1",
+  "description": "A complete ascii game engine.",
+  "main": "engine.js",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.2.0",
+    "uglify-js": "mishoo/UglifyJS2#harmony",
+    "watch": "^0.18.0"
+  },
+  "scripts": {
+    "start": "lite-server",
+    "build": "npm run uglify && cp dist/ascii-game-engine.min.js* test-server/js",
+    "build:w": "watch \"npm run build\" ./lib",
+    "uglify": "uglifyjs --compress --mangle -o dist/ascii-game-engine.min.js -r '$' -- lib/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ascii",
+    "game",
+    "engine"
+  ],
+  "author": "Jason Yu <me@ycmjason.com> (ycmjason.com)",
+  "license": "MIT"
+}

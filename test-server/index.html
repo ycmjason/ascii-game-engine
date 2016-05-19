@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <style>
+      pre{
+        font-size: 2rem;
+        border: black 1px solid;
+        line-height: 1.3ch;
+      }
+    </style>
+  </head>
+  <body>
+    <pre></pre>
+    <!-- scriptssss -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="./js/ascii-game-engine.min.js"></script>
+    <script src="./js/block-component.js"></script>
+    <script>
+      var engine = AsciiGameEngine.init("pre", 50, 50);
+      engine.addComponent(new Block());
+      engine.start();
+    </script> 
+  </body>
+</html>
