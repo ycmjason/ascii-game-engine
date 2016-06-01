@@ -33,7 +33,6 @@
       var engine = AsciiGameEngine.init(".game", 50, 12);
       engine.addComponent(new Block());
       var b = new Block([5, 10]);
-      b.keydown = undefined;
       engine.addComponent(b);
       engine.start();
 

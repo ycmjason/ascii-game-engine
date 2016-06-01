@@ -1,10 +1,14 @@
 function Block(startingPosition, z_index){
+  /* required properties that the engine cares */
+  this.position = startingPosition || [0, 0];
+  this.z_index = z_index || 0;
+  this.overflowStrategy = 'loopback';
+
+  /* internal properties */
   this.representations = [' o\nooo', 'o\noo\no', 'ooo\n o', ' o\noo\n o'];
   this.state = 0;
-  this.position = startingPosition || [0, 0];
-  this.overflowStrategy = 'loopback';
-  this.z_index = z_index || 0;
 }
+/* methods that the engine cares */
 Block.prototype.tick = function(currentTick){
   if(currentTick % 60 == 0) {
     this.position[1] += 1;
