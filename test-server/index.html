@@ -5,8 +5,8 @@
         font-size: 2rem;
         border: black 1px solid;
         line-height: 1.3ch;
-        float: left;
-        margin: 0;
+        margin-left:auto;
+        margin-right:auto;
       }
       .log{
         white-space: pre-wrap;
@@ -21,18 +21,20 @@
   </head>
   <body>
     <pre class="game"></pre>
-    <div>
+    <!--div>
       <button>show log</button>
       <pre class="log"></pre>
-    </div>
+    </div-->
     <!-- scriptssss -->
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script src="./js/ascii-game-engine.min.js"></script>
     <script src="./js/block-component.js"></script>
     <script>
-      var engine = AsciiGameEngine.init(".game", 50, 50);
+      var engine = AsciiGameEngine.init(".game", 50, 12);
       engine.addComponent(new Block());
-      engine.addComponent(new Block([5,0]));
+      var b = new Block([5, 10]);
+      b.keydown = undefined;
+      engine.addComponent(b);
       engine.start();
 
       $('button').click(() => {

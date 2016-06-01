@@ -1,8 +1,9 @@
-function Block(startingPosition){
+function Block(startingPosition, z_index){
   this.representations = [' o\nooo', 'o\noo\no', 'ooo\n o', ' o\noo\n o'];
   this.state = 0;
   this.position = startingPosition || [0, 0];
-  this.z_index = 0;
+  this.overflowStrategy = 'loopback';
+  this.z_index = z_index || 0;
 }
 Block.prototype.tick = function(currentTick){
   if(currentTick % 60 == 0) {
@@ -11,6 +12,9 @@ Block.prototype.tick = function(currentTick){
 }
 Block.prototype.toString = function(){
   return this.representations[this.state];
+}
+Block.prototype.onCollide = function(components){
+   
 }
 Block.prototype.keydown = function(key){
   switch(key.name){

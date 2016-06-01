@@ -1,4 +1,5 @@
 {
+  "notify": false,
   "port": 8000,
   "files": ["./test-server/**/*.{html,htm,js,css}"],
   "server": { "baseDir": "./test-server" }
