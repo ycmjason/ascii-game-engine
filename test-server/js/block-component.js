@@ -1,6 +1,6 @@
-function Block(startingPosition, z_index){
+function Block(coordinate, z_index){
   /* required properties that the engine cares */
-  this.position = startingPosition || [0, 0];
+  this.coordinate = coordinate || [0, 0];
   this.z_index = z_index || 0;
   this.overflowStrategy = 'loopback';
 
@@ -11,7 +11,7 @@ function Block(startingPosition, z_index){
 /* methods that the engine cares */
 Block.prototype.tick = function(currentTick){
   if(currentTick % 60 == 0) {
-    this.position[1] += 1;
+    this.coordinate[1] += 1;
   }
 }
 Block.prototype.toString = function(){
@@ -26,16 +26,16 @@ Block.prototype.keydown = function(key){
       this.state = (this.state + 1) % 4
       break;
     case 'down':
-      this.position[1] += 1;
+      this.coordinate[1] += 1;
       break;
     case 'space':
-      this.position[1] = 48;
+      this.coordinate[1] = 48;
       break;
     case 'left':
-      this.position[0] -= 1;
+      this.coordinate[0] -= 1;
       break;
     case 'right':
-      this.position[0] += 1;
+      this.coordinate[0] += 1;
       break;
   }
 }
